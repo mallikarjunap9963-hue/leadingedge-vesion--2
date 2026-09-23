@@ -255,13 +255,13 @@ img {
    ========================================================================== */
 .hero-section {
     position: relative;
-    padding: 80px 0 100px;
-    min-height: 580px;
+    padding: 40px 0 50px;
+    min-height: 480px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: -75px;
-    padding-top: 140px;
+    padding-top: 110px;
 }
 
 .hero-bg-wrapper {
@@ -388,7 +388,7 @@ img {
    Welcome Section
    ========================================================================== */
 .welcome-section {
-    padding: 80px 0 70px;
+    padding: 45px 0 35px;
     background-color: var(--bg-white);
 }
 
@@ -451,16 +451,185 @@ img {
 }
 
 /* ==========================================================================
+   Robotics in Action | Transforming Key Sectors Section
+   ========================================================================== */
+.sectors-section {
+    padding: 45px 0 45px;
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.sectors-header {
+    margin-bottom: 28px;
+}
+
+.sectors-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 8px;
+}
+
+.text-navy {
+    color: #0f2847;
+}
+
+.title-divider {
+    color: #cbd5e1;
+    margin: 0 12px;
+    font-weight: 300;
+}
+
+.text-cyan {
+    color: #c70202;
+}
+
+.sectors-subtitle {
+    font-size: 1.05rem;
+    color: #475569;
+    font-weight: 500;
+}
+
+.sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.sector-card {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.sector-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.1);
+    border-color: rgba(2, 132, 199, 0.3);
+}
+
+.sector-img-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.sector-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.sector-card:hover .sector-img {
+    transform: scale(1.06);
+}
+
+.sector-card-body {
+    padding: 0 24px 28px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.sector-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-white);
+    font-size: 1.25rem;
+    margin-top: -24px;
+    margin-bottom: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 5;
+    border: 3px solid var(--bg-white);
+}
+
+.badge-blue {
+    background-color: #0284c7;
+}
+
+.badge-green {
+    background-color: #16a34a;
+}
+
+.badge-purple {
+    background-color: #9333ea;
+}
+
+.badge-amber {
+    background-color: #ea580c;
+}
+
+.badge-teal {
+    background-color: #0d9488;
+}
+
+.badge-red {
+    background-color: #dc2626;
+}
+
+.sector-card-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.title-blue {
+    color: #0284c7;
+}
+
+.title-green {
+    color: #16a34a;
+}
+
+.title-purple {
+    color: #9333ea;
+}
+
+.title-amber {
+    color: #ea580c;
+}
+
+.title-teal {
+    color: #0d9488;
+}
+
+.title-red {
+    color: #dc2626;
+}
+
+.sector-card-desc {
+    font-size: 0.88rem;
+    color: var(--text-body);
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* ==========================================================================
    Highlights Section
    ========================================================================== */
 .highlights-section {
-    padding: 70px 0 90px;
+    padding: 45px 0 45px;
     background-color: #fafbfc;
 }
 
 .section-header-center {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .highlights-title {
@@ -541,7 +710,7 @@ img {
    Why Choose Section
    ========================================================================== */
 .why-choose-section {
-    padding: 60px 0;
+    padding: 35px 0;
     background-color: #f1f5f9;
     background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
     background-size: 24px 24px;
@@ -589,7 +758,7 @@ img {
    CTA Banner Section
    ========================================================================== */
 .cta-banner-section {
-    padding: 70px 0 90px;
+    padding: 40px 0 40px;
 }
 
 .cta-banner-card {
@@ -669,14 +838,14 @@ img {
 .site-footer {
     background-color: var(--primary-red);
     color: var(--bg-white);
-    padding: 70px 0 0;
+    padding: 45px 0 0;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: 1.3fr 0.8fr 1.1fr 1.4fr 0.8fr;
     gap: 40px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 .footer-brand {
