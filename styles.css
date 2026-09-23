@@ -255,13 +255,14 @@ img {
    ========================================================================== */
 .hero-section {
     position: relative;
-    padding: 40px 0 50px;
-    min-height: 480px;
+    /* min-height: 100vh;
+    height: 100vh; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: -75px;
-    padding-top: 110px;
+    padding-top: 130px;
+    padding-bottom: 0;
 }
 
 .hero-bg-wrapper {
@@ -378,10 +379,75 @@ img {
 }
 
 .feature-col-text {
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     font-weight: 800;
     color: #0f172a;
     line-height: 1.25;
+}
+
+/* ==========================================================================
+   Floating Inclusions Bar - 50% Overlap
+   ========================================================================== */
+.inclusions-wrapper {
+    position: relative;
+    z-index: 30;
+    margin-top: auto;
+    transform: translateY(50%);
+}
+
+.inclusions-pill-bar {
+    background-color: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 16px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.inclusion-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 4px 8px;
+}
+
+.inclusion-outline-icon {
+    font-size: 1.85rem;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.inclusion-label {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.inclusion-label strong {
+    font-size: 0.98rem;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.2px;
+}
+
+.inclusion-label span {
+    font-size: 0.86rem;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.inclusion-v-divider {
+    width: 1px;
+    height: 36px;
+    background-color: #e2e8f0;
+    flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -710,48 +776,260 @@ img {
    Why Choose Section
    ========================================================================== */
 .why-choose-section {
-    padding: 35px 0;
-    background-color: #f1f5f9;
+    padding: 45px 0 50px;
+    background-color: #f3f6f9;
     background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
     background-size: 24px 24px;
 }
 
 .why-title {
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: 800;
-    color: var(--text-dark);
+    color: #1e293b;
+    margin-bottom: 28px;
+    letter-spacing: -0.3px;
 }
 
-.checklist-bar {
+.checklist-row {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 16px;
-    background-color: var(--bg-white);
-    padding: 22px 30px;
-    border-radius: var(--radius-pill);
-    box-shadow: var(--shadow-md);
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
 }
 
 .check-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.92rem;
+    gap: 12px;
+    font-size: 0.88rem;
     font-weight: 700;
-    color: var(--text-dark);
+    color: #1e293b;
+    flex: 1;
+    justify-content: center;
 }
 
 .check-icon {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     color: var(--primary-red);
+    flex-shrink: 0;
 }
 
 .check-divider {
     width: 1px;
-    height: 24px;
-    background-color: var(--border-light);
+    height: 32px;
+    background-color: #cbd5e1;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Extraordinary Educational & Cultural Experience Section
+   ========================================================================== */
+.experience-section {
+    padding: 60px 0 70px;
+    background-color: #ffffff;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.experience-img-frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.experience-img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Red Circular Stamp Badge on Image */
+.experience-badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #e53935 0%, #ce2227 70%, #9a0007 100%);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: rotate(-10deg);
+    box-shadow: 0 10px 25px rgba(206, 34, 39, 0.4);
+    border: 2px stroke rgba(255, 255, 255, 0.4);
+    outline: 2px dashed rgba(255, 255, 255, 0.6);
+    outline-offset: -6px;
+    padding: 8px;
+}
+
+.exp-badge-title {
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.5px;
+}
+
+.exp-badge-sub {
+    font-family: var(--font-brush);
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+.exp-badge-main {
+    font-family: var(--font-brush);
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: -2px;
+}
+
+.japan-flag {
+    width: 24px;
+    height: 15px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.flag-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #bc002d;
+}
+
+/* Content Styling */
+.experience-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #0f2847;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.experience-subtitle {
+    font-size: 1.02rem;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.exp-pillars-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.exp-pillar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.pillar-icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.icon-blue {
+    background-color: #0284c7;
+}
+
+.icon-purple {
+    background-color: #9333ea;
+}
+
+.icon-green {
+    background-color: #16a34a;
+}
+
+.icon-amber {
+    background-color: #ea580c;
+}
+
+.pillar-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+
+.pillar-text strong {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.pillar-text span {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.exp-pillar-divider {
+    width: 1px;
+    height: 45px;
+    background-color: #e2e8f0;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+/* Highlight Quote Callout Box */
+.insight-callout-box {
+    background-color: #e0f2fe;
+    border: 1px solid #bae6fd;
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.callout-icon {
+    font-size: 2.1rem;
+    color: #0284c7;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.callout-text {
+    font-size: 0.92rem;
+    color: #0369a1;
+    line-height: 1.6;
+}
+
+.callout-text strong {
+    color: #0c4a6e;
+    font-weight: 800;
 }
 
 /* ==========================================================================
