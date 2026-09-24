@@ -67,9 +67,9 @@ img {
 
 .container {
     width: 100%;
-    max-width: 1240px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 32px;
 }
 
 /* ==========================================================================
@@ -255,13 +255,12 @@ img {
    ========================================================================== */
 .hero-section {
     position: relative;
-    /* min-height: 100vh;
-    height: 100vh; */
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-top: -75px;
-    padding-top: 130px;
+    padding-top: 160px;
     padding-bottom: 0;
 }
 
@@ -290,10 +289,10 @@ img {
 }
 
 .hero-content {
-    max-width: 620px;
+    max-width: 760px;
     position: relative;
     z-index: 2;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 /* Soft light white glow ONLY behind the text */
@@ -304,7 +303,7 @@ img {
     left: -30px;
     right: -20px;
     bottom: -20px;
-    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.845) 50%, rgba(255, 255, 255, 0) 82%);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.85) 45%, rgba(255, 255, 255, 0.52) 70%, rgba(255, 255, 255, 0) 90%);
     border-radius: 40px;
     z-index: -1;
     pointer-events: none;
@@ -329,7 +328,7 @@ img {
     font-size: 1.05rem;
     color: #1e293b;
     margin-bottom: 40px;
-    max-width: 500px;
+    max-width: 640px;
     line-height: 1.6;
     font-weight: 600;
 }
@@ -338,8 +337,8 @@ img {
 .hero-features-row {
     display: flex;
     align-items: flex-start;
-    gap: 16px;
-    max-width: 580px;
+    gap: 20px;
+    max-width: 720px;
 }
 
 .feature-col {
@@ -399,12 +398,12 @@ img {
     background-color: #ffffff;
     border-radius: 50px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 16px 36px;
+    padding: 18px 40px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     border: 1px solid rgba(226, 232, 240, 0.9);
-    max-width: 1140px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -454,8 +453,8 @@ img {
    Welcome Section
    ========================================================================== */
 .welcome-section {
-    padding: 45px 0 35px;
-    background-color: var(--bg-white);
+    padding: 85px 0 55px;
+    background-color: #ffffff;
 }
 
 .welcome-grid {
@@ -520,14 +519,17 @@ img {
    Robotics in Action | Transforming Key Sectors Section
    ========================================================================== */
 .sectors-section {
-    padding: 45px 0 45px;
+    padding: 65px 0 65px;
     background-color: #f8fafc;
-    border-top: 1px solid #e2e8f0;
-    border-bottom: 1px solid #e2e8f0;
 }
 
-.sectors-header {
-    margin-bottom: 28px;
+.sectors-header-flex {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .sectors-title {
@@ -557,13 +559,65 @@ img {
     font-weight: 500;
 }
 
+/* Sectors Header Navigation Buttons */
+.sectors-nav-btns {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sectors-nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--bg-white);
+    border: 1px solid #cbd5e1;
+    color: var(--text-dark);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.sectors-nav-btn:hover {
+    background-color: var(--primary-red);
+    color: var(--bg-white);
+    border-color: var(--primary-red);
+    box-shadow: 0 6px 16px rgba(206, 34, 39, 0.35);
+    transform: translateY(-2px);
+}
+
+.sectors-carousel-container {
+    position: relative;
+    width: 100%;
+}
+
 .sectors-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 16px 8px 24px;
+    margin: -16px -8px -10px;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.sectors-grid::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
 }
 
 .sector-card {
+    flex: 0 0 calc((100% - 48px) / 3);
+    min-width: 290px;
+    scroll-snap-align: start;
     background-color: var(--bg-white);
     border-radius: var(--radius-md);
     overflow: hidden;
@@ -571,7 +625,45 @@ img {
     border: 1px solid #e2e8f0;
     display: flex;
     flex-direction: column;
-    transition: var(--transition);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .sector-card {
+        flex: 0 0 calc((100% - 24px) / 2);
+    }
+}
+
+@media (max-width: 640px) {
+    .sector-card {
+        flex: 0 0 100%;
+    }
+}
+
+/* Dots Pagination */
+.sectors-dots-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.sector-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #cbd5e1;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sector-dot.active {
+    width: 28px;
+    border-radius: 10px;
+    background-color: var(--primary-red);
 }
 
 .sector-card:hover {
@@ -689,8 +781,8 @@ img {
    Highlights Section
    ========================================================================== */
 .highlights-section {
-    padding: 45px 0 45px;
-    background-color: #fafbfc;
+    padding: 70px 0 70px;
+    background-color: #ffffff;
 }
 
 .section-header-center {
@@ -720,12 +812,12 @@ img {
 }
 
 .highlight-card {
-    background-color: var(--bg-white);
+    background-color: #ffffff;
     border-radius: var(--radius-md);
     padding: 36px 20px 28px;
     text-align: center;
-    border: 1px solid #edf2f7;
-    box-shadow: var(--shadow-sm);
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
     transition: var(--transition);
     display: flex;
     flex-direction: column;
@@ -733,9 +825,10 @@ img {
 }
 
 .highlight-card:hover {
+    background-color: #ffffff;
     transform: translateY(-8px);
-    border-color: rgba(206, 34, 39, 0.2);
-    box-shadow: var(--shadow-lg);
+    border-color: rgba(206, 34, 39, 0.25);
+    box-shadow: 0 16px 35px rgba(206, 34, 39, 0.12);
 }
 
 .card-icon-red {
@@ -776,57 +869,78 @@ img {
    Why Choose Section
    ========================================================================== */
 .why-choose-section {
-    padding: 45px 0 50px;
-    background-color: #f3f6f9;
-    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
-    background-size: 24px 24px;
+    padding: 65px 0 70px;
+    background-color: #f8fafc;
 }
 
 .why-title {
-    font-size: 2.1rem;
+    font-size: 2.2rem;
     font-weight: 800;
     color: #1e293b;
-    margin-bottom: 28px;
     letter-spacing: -0.3px;
 }
 
-.checklist-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 10px 0;
+/* Individual Feature Info Boxes */
+.why-boxes-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-top: 36px;
 }
 
-.check-item {
+.why-info-box {
+    background-color: #ffffff;
+    border-radius: var(--radius-md);
+    padding: 32px 22px 28px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    transition: var(--transition);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: #1e293b;
-    flex: 1;
-    justify-content: center;
 }
 
-.check-icon {
-    font-size: 1.35rem;
+.why-info-box:hover {
+    transform: translateY(-8px);
+    border-color: rgba(206, 34, 39, 0.25);
+    box-shadow: 0 16px 35px rgba(206, 34, 39, 0.12);
+}
+
+.why-box-icon {
+    font-size: 2.5rem;
     color: var(--primary-red);
-    flex-shrink: 0;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
 }
 
-.check-divider {
-    width: 1px;
-    height: 32px;
-    background-color: #cbd5e1;
-    flex-shrink: 0;
+.why-info-box:hover .why-box-icon {
+    transform: scale(1.12);
+    color: var(--primary-red-hover);
+}
+
+.why-box-content h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.why-box-content p {
+    font-size: 0.86rem;
+    color: var(--text-body);
+    line-height: 1.55;
 }
 
 /* ==========================================================================
    Extraordinary Educational & Cultural Experience Section
    ========================================================================== */
 .experience-section {
-    padding: 60px 0 70px;
+    padding: 75px 0 75px;
     background-color: #ffffff;
 }
 
@@ -1036,7 +1150,8 @@ img {
    CTA Banner Section
    ========================================================================== */
 .cta-banner-section {
-    padding: 40px 0 40px;
+    padding: 60px 0 65px;
+    background-color: #ffffff;
 }
 
 .cta-banner-card {
@@ -1377,12 +1492,51 @@ img {
 /* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 24px;
+    }
+
+    .inclusions-pill-bar {
+        padding: 16px 24px;
+    }
+
+    .inclusion-label strong {
+        font-size: 0.9rem;
+    }
+
+    .inclusion-label span {
+        font-size: 0.8rem;
+    }
+
+    .checklist-card-bar {
+        padding: 16px 24px;
+        border-radius: 30px;
+    }
+
+    .check-item {
+        font-size: 0.82rem;
+    }
+}
+
 @media (max-width: 1024px) {
     .hero-title {
         font-size: 2.8rem;
     }
 
-    .highlights-grid {
+    .inclusions-pill-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        border-radius: 24px;
+    }
+
+    .inclusion-v-divider {
+        display: none;
+    }
+
+    .highlights-grid,
+    .why-boxes-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
@@ -1398,6 +1552,10 @@ img {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
     .mobile-toggle {
         display: block;
     }
@@ -1442,19 +1600,15 @@ img {
         display: none;
     }
 
-    .welcome-grid {
+    .welcome-grid,
+    .experience-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .highlights-grid {
+    .highlights-grid,
+    .why-boxes-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .checklist-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        border-radius: var(--radius-lg);
     }
 
     .check-divider {
@@ -1490,7 +1644,8 @@ img {
         font-size: 2.2rem;
     }
 
-    .highlights-grid {
+    .highlights-grid,
+    .why-boxes-grid {
         grid-template-columns: 1fr;
     }
 }
