@@ -1,5 +1,5 @@
 /* ==========================================================================
-   STEM Tour to Japan - Primary Stylesheet
+   LeadingEdge Vision - Primary Stylesheet
    Clean Hero Section without White Overlay
    ========================================================================== */
 
@@ -306,7 +306,7 @@ img {
     left: -30px;
     right: -20px;
     bottom: -20px;
-    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.85) 45%, rgba(255, 255, 255, 0.52) 70%, rgba(255, 255, 255, 0) 90%);
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.85) 45%, rgba(255, 255, 255, 0.77) 70%, rgba(255, 255, 255, 0.12) 90%);
     border-radius: 40px;
     z-index: -1;
     pointer-events: none;

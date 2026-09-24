@@ -1,5 +1,5 @@
 /**
- * STEM Tour to Japan - Interactive JavaScript Logic
+ * LeadingEdge Vision - Interactive JavaScript Logic
  */
 
 document.addEventListener('DOMContentLoaded', () => {
